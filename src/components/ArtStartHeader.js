@@ -1,4 +1,5 @@
 import React from 'react';
+import ArtStartLogo from '../images/ArtStartLogo.png'
 
 class ArtStartHeader extends React.Component{
 
@@ -6,7 +7,7 @@ class ArtStartHeader extends React.Component{
         return(
             <div id="art-start-header">
                 <img 
-                    src="./public/art-start-logo.png"
+                    src={ ArtStartLogo }
                     alt="met-museum-with-art-start-logo" 
                 />
             </div>

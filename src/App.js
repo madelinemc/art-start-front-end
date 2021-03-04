@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowswerRouter as Router, Switch, Route } from 'react-router-dom';
+import { Switch, Route } from 'react-router-dom';
 import './App.css';
 
 import ArtStartHeader from './components/ArtStartHeader';
