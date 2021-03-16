@@ -6,9 +6,10 @@ import ReactDOM from 'react-dom';
 import App from './App';
 
 //libraries
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 import { BrowserRouter as Router } from 'react-router-dom';
+import thunk from 'redux-thunk';
 
 //redux
 import { artReducer } from './redux/artReducer';
@@ -19,7 +20,7 @@ import './index.css';
 
 
 
-const store = createStore(artReducer)
+const store = createStore(artReducer, applyMiddleware(thunk))
 
 
 //any child component of the provider(a higher order component) has the potential to connect directly to the store that is being passed to the provider component in a prop called store created above.

@@ -7,14 +7,22 @@ import { connect } from 'react-redux';
 
 class ArtContainer extends React.Component{
 
-    renderArt(title){
-        return <li>{title}</li>
+    componentDidMount(){
+        this.props.setArtworksWithinDispatch()
     }
+
+    renderArt(artwork){
+        return <li>{artwork}</li>
+    }
+    //his render function:
+    //makeLisFromTitles(title, index){
+        //return <li key={title + "-" + index}>{title}</li>
+    //} **need to add a key for an ordered list
 
     render(){
         return (
             <div id="art-container">
-                {props.artworksInStoresState.map(renderArt)}
+                {this.props.artworksInStoresState.map(this.renderArt)}
             </div>
         )
     }
@@ -23,11 +31,16 @@ class ArtContainer extends React.Component{
     mapStateToProps(state){
         //this object that we return will have its key: value pairs inside of props for the component at the end
         return {
-            artworksInStoresState: state.titles
+            artworksInStoresState: state.artworks
         }
     }
 
-    mapDispatchToProps()
+    mapDispatchToProps(dispatch){
+        return {
+            setArtworksWithinDispatch: () => dispatch(setArtworks()) //because of thunk, dispatch can now receive either objects(actions) or functions. 
+            //if it receives a function, it knows to invoke it and pass dispatch to it so the function will have access to dispatch inside.
+        }
+    }
 
 }
 

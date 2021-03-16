@@ -1,9 +1,28 @@
-//example action creators
+import { SET_ARTWORKS } from './actionTypes';
 
-export function name(){
-    return {type: "NAME"}
-}
+const url = "http....."
 
-export function another(arg){
-    return {type: "ANOTHER", payload: arg}
+export function setArtworks(){
+    return function(dispatch){
+        fetch(url)
+        .then(response => response.json())
+        .then(responseObject => {
+            console.log(responseObject)
+            //let title = responseObject.titles.map(item => item.volumeInfo.title)} ---this is his example
+            dispatch({type: SET_ARTWORKS, payload: artworks})
+        })
+    }
 }
+//thunk: setArtworks returns a fuction that receives dispatch as an argument
+
+
+
+//example action creators:
+
+// export function name(){
+//     return {type: "NAME"}
+// }
+
+// export function another(arg){
+//     return {type: "ANOTHER", payload: arg}
+// }
