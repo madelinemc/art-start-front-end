@@ -5,7 +5,7 @@ class ArtStartHeader extends React.Component{
 
     render(){
         return(
-            <div id="art-start-header">
+            <div id="art-start-header-image">
                 <img 
                     src={ ArtStartLogo }
                     alt="met-museum-with-art-start-logo" 
