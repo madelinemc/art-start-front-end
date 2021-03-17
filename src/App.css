@@ -1,5 +1,6 @@
 .App {
   text-align: center;
+  max-width: 100%;
 }
 
 .App-logo {
@@ -45,10 +46,9 @@ p {
   font-family: 'Shippori Mincho B1', serif;
 }
 
-.art-start-header-image {
-  background-size: 100% 100%;
-  height: 300px;
-  display: inline-block;
+.art-start-header-image, img {
+  object-fit: cover;
+  width: 100%;
 }
 
 html, body {

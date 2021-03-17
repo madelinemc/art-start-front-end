@@ -1,7 +1,9 @@
 import React from 'react';
-import './App.css';
+import '../App.css';
 
 import { connect } from 'react-redux';
+
+import { setArtworks } from '../redux/actionCreators'
 
 // import { Link } from 'react-router-dom';
 
@@ -12,7 +14,7 @@ class ArtContainer extends React.Component{
     }
 
     renderArt(artwork){
-        return <li>{artwork}</li>
+        return <li>{artwork.title}</li>
     }
     //his render function:
     //makeLisFromTitles(title, index){
@@ -22,26 +24,26 @@ class ArtContainer extends React.Component{
     render(){
         return (
             <div id="art-container">
-                {this.props.artworksInStoresState.map(this.renderArt)}
+                <ul>{this.props.artworksInStoresState.map(this.renderArt)}
+                </ul>
             </div>
         )
     }
 
+}
 
-    mapStateToProps(state){
-        //this object that we return will have its key: value pairs inside of props for the component at the end
-        return {
-            artworksInStoresState: state.artworks
-        }
+function mapStateToProps(state){
+    //this object that we return will have its key: value pairs inside of props for the component at the end
+    return {
+        artworksInStoresState: state.artworks
     }
+}
 
-    mapDispatchToProps(dispatch){
-        return {
-            setArtworksWithinDispatch: () => dispatch(setArtworks()) //because of thunk, dispatch can now receive either objects(actions) or functions. 
-            //if it receives a function, it knows to invoke it and pass dispatch to it so the function will have access to dispatch inside.
-        }
+function mapDispatchToProps(dispatch){
+    return {
+        setArtworksWithinDispatch: () => dispatch(setArtworks()) //because of thunk, dispatch can now receive either objects(actions) or functions. 
+        //if it receives a function, it knows to invoke it and pass dispatch to it so the function will have access to dispatch inside.
     }
-
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ArtContainer)

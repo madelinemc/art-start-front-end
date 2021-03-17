@@ -1,14 +1,15 @@
 import { SET_ARTWORKS } from './actionTypes';
 
-const url = "http....."
+const url = "http://localhost:3000/artworks"
 
 export function setArtworks(){
     return function(dispatch){
         fetch(url)
         .then(response => response.json())
         .then(responseObject => {
-            console.log(responseObject)
             //let title = responseObject.titles.map(item => item.volumeInfo.title)} ---this is his example
+            let artworks = responseObject
+            console.log(artworks)
             dispatch({type: SET_ARTWORKS, payload: artworks})
         })
     }
