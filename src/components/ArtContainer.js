@@ -14,7 +14,12 @@ class ArtContainer extends React.Component{
     }
 
     renderArt(artwork){
-        return <li>{artwork.title}</li>
+        return (
+            <div className="art-cards">
+                <p>{artwork.title}</p>
+                <img src={`${artwork.primary_image_small}`} alt={artwork.tile}/>
+            </div>
+        )
     }
     //his render function:
     //makeLisFromTitles(title, index){
@@ -24,8 +29,7 @@ class ArtContainer extends React.Component{
     render(){
         return (
             <div id="art-container">
-                <ul>{this.props.artworksInStoresState.map(this.renderArt)}
-                </ul>
+                {this.props.artworksInStoresState.map(this.renderArt)}
             </div>
         )
     }

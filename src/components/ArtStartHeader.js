@@ -13,7 +13,7 @@ class ArtStartHeader extends React.Component{
                 />
                 <ArtButton btnName={"search for art"}/>
                 <ArtButton btnName={"show me art"}/>
-                <ArtButton btnName={"department"}/>
+                <ArtButton btnName={"by department"}/>
             </div>
         )
     }

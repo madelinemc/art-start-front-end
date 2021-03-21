@@ -44,11 +44,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Shippori+Mincho+B1:wght@500&display=swap');
 p {
   font-family: 'Shippori Mincho B1', serif;
-}
-
-.art-start-header-image, img {
-  object-fit: cover;
-  width: 100%;
+  color: #FFBD35;
 }
 
 html, body {
@@ -56,24 +52,81 @@ html, body {
   margin:0px;
 }
 
+/* ArtStartHeader.js */
+.art-start-header-image, img {
+  object-fit: cover;
+  width: 100%;
+}
+
+/* ArtButton.js */
 .nav-btn {
   background-color: #FFBD35;
   color: white;
   cursor: pointer;
-  font-family: 'Shippori Mincho B1', serif;
-  font-size: 2rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 30px;
+  text-align: center;
   width: 240px;
   height: 60px;
   margin: 0 40px 0;
+  border: none;
+  border-radius: 12px;
+  text-decoration: none;
+  display: inline-block;
 }
 
 .nav-btn-selected {
   background-color: white;
   color: #FFBD35;
   cursor: pointer;
-  font-family: 'Shippori Mincho B1', serif;
-  font-size: 2rem;
+  font-family: 'Poppins', sans-serif;
+  font-size: 30px;
+  text-align: center;
   width: 240px;
   height: 60px;
   margin: 0 40px 0;
+  border: none;
+  border-radius: 12px;
+  text-decoration: none;
+  display: inline-block;
 }
+
+
+/* ArtContainer.js */
+.art-cards {
+  text-align: center;
+  border: grey solid 1px;
+  padding: 1rem;
+  width: 15rem;
+  height: 25rem;
+  display: inline-grid;
+  margin: 1rem 2rem;
+  /* box-shadow: 3px 4px #FFBD35 */
+}
+
+
+/* ArtShow.js */
+.art-show {
+  text-align: center;
+  border: grey solid 1px;
+  padding: 1rem;
+  width: 15rem;
+  height: 25rem;
+  display: inline-grid;
+  margin: 1rem 2rem;
+  box-shadow: 3px 4px #FFBD35
+}
+
+
+
+/* DepartmentList.js */
+/* .department-list {
+
+} */
+
+
+
+/* SearchBar.js */
+/* .search-bar {
+
+} */
