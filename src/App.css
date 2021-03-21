@@ -55,3 +55,25 @@ html, body {
   padding:0px;
   margin:0px;
 }
+
+.nav-btn {
+  background-color: #FFBD35;
+  color: white;
+  cursor: pointer;
+  font-family: 'Shippori Mincho B1', serif;
+  font-size: 2rem;
+  width: 240px;
+  height: 60px;
+  margin: 0 40px 0;
+}
+
+.nav-btn-selected {
+  background-color: white;
+  color: #FFBD35;
+  cursor: pointer;
+  font-family: 'Shippori Mincho B1', serif;
+  font-size: 2rem;
+  width: 240px;
+  height: 60px;
+  margin: 0 40px 0;
+}

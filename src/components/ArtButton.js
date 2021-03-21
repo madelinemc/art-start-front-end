@@ -4,10 +4,9 @@ class ArtShow extends React.Component{
 
     render(){
         return(
-            <div id="art-show">
-                <img></img>
-                
-            </div>
+            <button className={"nav-btn"}>
+                {this.props.btnName}
+            </button>
         )
     }
 

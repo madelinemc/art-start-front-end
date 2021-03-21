@@ -1,5 +1,6 @@
 import React from 'react';
 import ArtStartLogo from '../images/ArtStartLogo.png'
+import ArtButton from './ArtButton';
 
 class ArtStartHeader extends React.Component{
 
@@ -10,6 +11,9 @@ class ArtStartHeader extends React.Component{
                     src={ ArtStartLogo }
                     alt="met-museum-with-art-start-logo" 
                 />
+                <ArtButton btnName={"search for art"}/>
+                <ArtButton btnName={"show me art"}/>
+                <ArtButton btnName={"department"}/>
             </div>
         )
     }
