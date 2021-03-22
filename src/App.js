@@ -18,9 +18,7 @@ function App() {
         <Route exact path="/artwork">
           <ArtContainer />
         </Route>
-        <Route path="/artwork/:id">
-          <ArtShow />
-        </Route>
+        <Route path="/artwork/:id" render={(routerProps) => <ArtShow {...routerProps}/>}></Route>
 
         <Route exact path="/search">
           <SearchBar />

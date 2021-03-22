@@ -2,8 +2,9 @@ import React from 'react';
 import '../App.css';
 
 import { connect } from 'react-redux';
+import { Link } from 'react-router-dom';
 
-import { setArtworks } from '../redux/actionCreators'
+import { setArtworks } from '../redux/actionCreators';
 
 // import { Link } from 'react-router-dom';
 
@@ -17,7 +18,7 @@ class ArtContainer extends React.Component{
         return (
             <div className="art-cards">
                 <p>{artwork.title}</p>
-                <img src={`${artwork.primary_image_small}`} alt={artwork.tile}/>
+                <Link key={artwork.id} to={"/artwork/" + artwork.id}><img src={`${artwork.primary_image_small}`} alt={artwork.title}/></Link>
             </div>
         )
     }
