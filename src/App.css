@@ -138,9 +138,19 @@ html, body {
 
 
 /* DepartmentList.js */
-/* .department-list {
+.met-button-img {
+  height: 100px;
+  width: 100px;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+.department-list {
+  display: inline-grid;
+  height: 200px;
+  width: 150px;
 
-} */
+}
 
 
 
