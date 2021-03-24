@@ -17,11 +17,11 @@ class ArtShow extends React.PureComponent{
         if(this.state.art){
             console.log(this.state.art)
             return(
-                <div id="art-show">
-                    <div>
-                        <img src={`${this.state.art.primary_image}`} alt={"photo of " + this.state.art.title}/>  
+                <div className="art-show-container">
+                    <div className="grid art-image">
+                        <img src={`${this.state.art.primary_image}`} alt={"photo of " + this.state.art.title} className="art-show-image"/>  
                     </div>
-                    <div>
+                    <div className="grid art-text">
                         <p><strong>{this.state.art.title}</strong></p>
                         <p><strong>By:  </strong> {}</p>
                         <p><strong>Date:  </strong>{this.state.art.date}</p>

@@ -9,20 +9,23 @@ class DepartmentList extends React.Component{
             .then(response => response.json())
             .then(responseObj => {
                 this.setState({departments: responseObj})
+                console.log(responseObj)
             })
     }
 
-    renderDepartmentButtons() {
-        let i = 0
-        while(i <= 16)
-            return <img src={`'../images/met-${i}.png'`} alt={"met museum visitor button"}/>
-        
+    renderDepartmentButtons(department, index){
+        return (
+            <div>
+                <img src={`'../images/met-${index}.png'`} alt={"met museum visitor button"}/>
+                <p>{department.name}</p>
+            </div>     
+        )
     }
 
     render(){
         return(
             <div id="department-list">
-        
+                {this.state.departments.map(this.renderDepartmentButtons)}
             </div>
         )
     }

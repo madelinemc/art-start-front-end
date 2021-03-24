@@ -106,15 +106,33 @@ html, body {
 
 
 /* ArtShow.js */
-.art-show {
-  text-align: center;
-  border: grey solid 1px;
-  padding: 1rem;
-  width: 15rem;
-  height: 25rem;
-  display: inline-grid;
-  margin: 1rem 2rem;
-  box-shadow: 3px 4px #FFBD35
+.art-show-container {
+  display: grid;
+  grid-template-columns: 0.25fr 0.25fr 0.25fr 0.25fr;
+  grid-template-rows: 200px;
+  grid-column-gap: 40px;
+}
+
+.grid {
+  background-color: transparent;
+  color: white;
+  padding: 25px;
+}
+
+.art-image {
+  grid-column: 2 / 3;
+  grid-row-start: 1;
+}
+
+.art-text {
+  grid-column: 3 / 4;
+  grid-row-start: 1;
+  text-align: left;
+}
+
+.art-show-image {
+  max-height: 40rem;
+  width: auto;
 }
 
 

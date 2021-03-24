@@ -6,7 +6,6 @@ import { Link } from 'react-router-dom';
 
 import { setArtworks } from '../redux/actionCreators';
 
-// import { Link } from 'react-router-dom';
 
 class ArtContainer extends React.Component{
 
@@ -22,10 +21,6 @@ class ArtContainer extends React.Component{
             </div>
         )
     }
-    //his render function:
-    //makeLisFromTitles(title, index){
-        //return <li key={title + "-" + index}>{title}</li>
-    //} **need to add a key for an ordered list
 
     render(){
         return (

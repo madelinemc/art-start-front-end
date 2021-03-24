@@ -7,7 +7,6 @@ export function setArtworks(){
         fetch(url)
         .then(response => response.json())
         .then(responseObject => {
-            //let title = responseObject.titles.map(item => item.volumeInfo.title)} ---this is his example
             let artworks = responseObject
             console.log(artworks)
             dispatch({type: SET_ARTWORKS, payload: artworks})
