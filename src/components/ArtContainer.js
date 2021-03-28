@@ -4,13 +4,13 @@ import '../App.css';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
-import { setArtworks } from '../redux/actionCreators';
+import { setArtworksByRandom, setArtworksBySearch, setArtworksByDept } from '../redux/actionCreators';
 
 
 class ArtContainer extends React.Component{
 
     componentDidMount(){
-        this.props.setArtworksWithinDispatch()
+        this.props.setArtworksWithinDispatchSearch()
     }
 
     renderArt(artwork){
@@ -41,9 +41,20 @@ function mapStateToProps(state){
 
 function mapDispatchToProps(dispatch){
     return {
-        setArtworksWithinDispatch: () => dispatch(setArtworks()) //because of thunk, dispatch can now receive either objects(actions) or functions. 
-        //if it receives a function, it knows to invoke it and pass dispatch to it so the function will have access to dispatch inside.
+        setArtworksWithinDispatchRandom: () => dispatch(setArtworksByRandom()), 
+        setArtworksWithinDispatchSearch: () => dispatch(setArtworksBySearch()),
+        setArtworksWithinDispatchDept: () => dispatch(setArtworksByDept())
     }
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(ArtContainer)
+
+
+
+//original working mDTP:
+// function mapDispatchToProps(dispatch){
+//     return {
+//         setArtworksWithinDispatch: () => dispatch(setArtworks()) //because of thunk, dispatch can now receive either objects(actions) or functions. 
+//         //if it receives a function, it knows to invoke it and pass dispatch to it so the function will have access to dispatch inside.
+//     }
+// }

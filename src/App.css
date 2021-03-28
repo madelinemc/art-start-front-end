@@ -147,9 +147,9 @@ html, body {
 }
 .department-list {
   display: inline-grid;
-  height: 200px;
+  height: 180px;
   width: 150px;
-
+  margin-top: 30px;
 }
 
 
