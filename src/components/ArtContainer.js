@@ -10,7 +10,19 @@ import { setArtworksByRandom, setArtworksBySearch, setArtworksByDept } from '../
 class ArtContainer extends React.Component{
 
     componentDidMount(){
-        this.props.setArtworksWithinDispatchSearch()
+        switch(this.props.userSelectedInStoresState){
+            case "random":
+                return this.props.setArtworksWithinDispatchRandom()
+
+            case "search":
+                return this.props.setArtworksWithinDispatchSearch()
+
+            case "dept":
+                return this.props.setArtworksWithinDispatchDept()
+            
+            default:
+        }
+        //this.props.setArtworksWithinDispatchSearch()
     }
 
     renderArt(artwork){
@@ -35,7 +47,8 @@ class ArtContainer extends React.Component{
 function mapStateToProps(state){
     //this object that we return will have its key: value pairs inside of props for the component at the end
     return {
-        artworksInStoresState: state.artworks
+        artworksInStoresState: state.artworks,
+        userSelectedInStoresState: state.userSelected
     }
 }
 
