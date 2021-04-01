@@ -8,14 +8,12 @@ class ArtStartHeader extends React.Component{
 
     render(){
         return(
-            <div id="art-start-header-image">
-                <img 
-                    src={ ArtStartLogo }
-                    alt="met-museum-with-art-start-logo" 
-                />
-                <Link to={"/search"}><ArtButton btnName={"search for art"}/></Link>
-                <ArtButton btnName={"show me art"}/>
-                <Link to={"/departments"}><ArtButton btnName={"by department"}/></Link>
+            <div className="art-start-header-image">
+                <div className="button-container">
+                    <Link to={"/search"}><ArtButton btnName={"search for art"}/></Link>
+                    <Link to={"/artwork"}><ArtButton btnName={"show me art"}/></Link>
+                    <Link to={"/departments"}><ArtButton btnName={"by department"}/></Link>
+                </div>
             </div>
         )
     }

@@ -1,4 +1,6 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
+
 import Met1 from '../images/met-1.png';
 import Met2 from '../images/met-2.png';
 import Met3 from '../images/met-3.png';
@@ -34,10 +36,12 @@ class DepartmentList extends React.Component{
         let metButtonArray = [Met1, Met2, Met3, Met4, Met5, Met6, Met7, Met8, Met9, Met10, Met11, Met12, Met13, Met14, Met15, Met16]
 
         return (
-            <div className="department-list">
-                <img src={ metButtonArray[index] } alt={"met museum visitor button"} className="met-button-img"/>
-                <p>{department.name}</p>
-            </div>     
+            <Link key={department.name + department.id} to={"/departments/" + department.id + "/artwork"}>
+                <div id={department.id} className="department-list">
+                    <img src={ metButtonArray[index] } alt={"met museum visitor button"} className="met-button-img"/>
+                    <p>{department.name}</p>
+                </div> 
+            </Link>    
         )
     }
 

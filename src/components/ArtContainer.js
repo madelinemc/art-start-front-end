@@ -18,11 +18,13 @@ class ArtContainer extends React.Component{
                 return this.props.setArtworksWithinDispatchSearch()
 
             case "dept":
-                return this.props.setArtworksWithinDispatchDept()
+                let id = parseInt(this.props.match.params.department)
+                console.log(id)
+                return this.props.setArtworksWithinDispatchDept(id)
             
             default:
         }
-        //this.props.setArtworksWithinDispatchSearch()
+        //this.props.setArtworksWithinDispatchRandom()
     }
 
     renderArt(artwork){
@@ -56,7 +58,7 @@ function mapDispatchToProps(dispatch){
     return {
         setArtworksWithinDispatchRandom: () => dispatch(setArtworksByRandom()), 
         setArtworksWithinDispatchSearch: () => dispatch(setArtworksBySearch()),
-        setArtworksWithinDispatchDept: () => dispatch(setArtworksByDept())
+        setArtworksWithinDispatchDept: (department_id) => dispatch(setArtworksByDept(department_id))
     }
 }
 

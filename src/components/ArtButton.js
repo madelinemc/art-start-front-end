@@ -1,18 +1,49 @@
 import React from 'react';
 
+import { connect } from 'react-redux';
+import { USER_SELECT_RANDOM, USER_SELECT_SEARCH, USER_SELECT_DEPT } from '../redux/actionTypes';
+
 class ArtShow extends React.Component{
 
     render(){
         return(
-            <button className={"nav-btn"}>
+            <button className={"nav-btn"} onClick={this.handleClick}>
                 {this.props.btnName}
             </button>
         )
     }
 
+    handleClick = (event) => {
+        switch(this.props.btnName){
+            case "show me art":
+                this.props.userSelectedWithinDispatchRandom()
+            break;
+
+            case "search for art":
+                this.props.userSelectedWithinDispatchSearch()
+            break;
+
+            case "by department":
+                this.props.userSelectedWithinDispatchDept()
+            break;
+
+            default:
+        }
+    }
 }
 
-export default ArtShow
+function mapStateToProps(state){
+    return {
+        userSelectedInStoresState: state.userSelected
+    }
+}
 
-//trigger callback function that dispatcches an action - hit backend, fetch whatever you want and then saves to state, switches state flag of what components to show or hide T or F
-//or have callback function that forces a url into browser header, react app takes that info and goes to the router you have set up
+function mapDispatchToProps(dispatch){
+    return {
+        userSelectedWithinDispatchRandom: () => dispatch({type: USER_SELECT_RANDOM}),
+        userSelectedWithinDispatchSearch: () => dispatch({type: USER_SELECT_SEARCH}),
+        userSelectedWithinDispatchDept: () => dispatch({type: USER_SELECT_DEPT})
+    }
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(ArtShow)

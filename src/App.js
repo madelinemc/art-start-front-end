@@ -30,9 +30,7 @@ function App() {
         <Route exact path="/departments">
           <DepartmentList />
         </Route>
-        <Route path="/departments/:id/artwork">
-          <ArtContainer />
-        </Route>
+        <Route path="/departments/:department/artwork" render={(routerProps) => <ArtContainer {...routerProps}/>}></Route>
 
       </Switch>
 

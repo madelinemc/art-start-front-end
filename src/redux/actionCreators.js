@@ -27,9 +27,9 @@ export function setArtworksBySearch(){
     }
 }
 
-export function setArtworksByDept(){
+export function setArtworksByDept(department_id){
     return function(dispatch){
-        fetch(url + "artworks")
+        fetch(url + "departments/" + department_id + "/artworks")
         .then(response => response.json())
         .then(responseObject => {
             let artworks = responseObject
