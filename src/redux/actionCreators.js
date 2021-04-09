@@ -1,9 +1,10 @@
-import { SET_ARTWORKS } from './actionTypes';
+import { SET_ARTWORKS, USER_SELECT_RANDOM } from './actionTypes';
 
 const url = "http://localhost:3000/"
 
 export function setArtworksByRandom(){
     return function(dispatch){
+        dispatch({type: USER_SELECT_RANDOM})
         fetch(url + "artworks")
         .then(response => response.json())
         .then(responseObject => {

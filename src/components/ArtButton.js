@@ -2,6 +2,7 @@ import React from 'react';
 
 import { connect } from 'react-redux';
 import { USER_SELECT_RANDOM, USER_SELECT_SEARCH, USER_SELECT_DEPT } from '../redux/actionTypes';
+import { setArtworksByRandom } from '../redux/actionCreators';
 
 class ArtShow extends React.Component{
 
@@ -40,7 +41,8 @@ function mapStateToProps(state){
 
 function mapDispatchToProps(dispatch){
     return {
-        userSelectedWithinDispatchRandom: () => dispatch({type: USER_SELECT_RANDOM}),
+        // userSelectedWithinDispatchRandom: () => dispatch({type: USER_SELECT_RANDOM}),
+        userSelectedWithinDispatchRandom: () => dispatch(setArtworksByRandom()),
         userSelectedWithinDispatchSearch: () => dispatch({type: USER_SELECT_SEARCH}),
         userSelectedWithinDispatchDept: () => dispatch({type: USER_SELECT_DEPT})
     }

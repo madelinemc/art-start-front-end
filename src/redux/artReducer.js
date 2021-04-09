@@ -3,7 +3,7 @@ import { SET_ARTWORKS, USER_SELECT_RANDOM, USER_SELECT_SEARCH, USER_SELECT_DEPT 
 //a reducer always wants to return a new updated state value. using the switch statement allow us to determine the only possible ways state can change
 export function artReducer(state = {
   artworks: [],
-  userSelected: ""
+  userSelected: "random"
   },
    action) { //provide default version of state ex: state = {key: value}
   switch(action.type){
