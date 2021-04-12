@@ -23,7 +23,7 @@ class ArtShow extends React.PureComponent{
                     </div>
                     <div className="grid art-text">
                         <p><strong>{this.state.art.title}</strong></p>
-                        <p><strong>By:  </strong> {}</p>
+                        <p><strong>By:  </strong> {this.state.art.artist.name}</p>
                         <p><strong>Date:  </strong>{this.state.art.date}</p>
                         <p><strong>Culture:  </strong>{this.state.art.culture}</p>
                         <p><strong>Period:  </strong>{this.state.art.period}</p>
