@@ -21,11 +21,8 @@ class SearchBar extends React.Component{
             <div className="search-wrap">
                 <div className="search-bar">
                     <form onSubmit={this.handleSubmit}>
-                        <input name="search" type="text" className="search-term" placeholder="Search By Artist Name"></input>
+                        <input name="search" type="text" className="search-term" placeholder="Search By Artist Name + Push Enter"></input>
                     </form>
-                    <button type="submit" className="search-button" >
-                        <i className="fa fa-search"></i>
-                    </button>
                 </div>
             </div>
 
