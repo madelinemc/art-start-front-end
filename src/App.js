@@ -23,9 +23,7 @@ function App() {
         <Route exact path="/search">
           <SearchBar />
         </Route>
-        <Route path="/search/:keyword/artwork">
-          <ArtContainer />
-        </Route>
+        <Route path="/search/:search/artwork" render={(routerProps) => <ArtContainer {...routerProps}/>}></Route>
 
         <Route exact path="/departments">
           <DepartmentList />

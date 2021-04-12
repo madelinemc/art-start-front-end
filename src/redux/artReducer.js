@@ -1,9 +1,10 @@
-import { SET_ARTWORKS, USER_SELECT_RANDOM, USER_SELECT_SEARCH, USER_SELECT_DEPT } from './actionTypes';
+import { SET_ARTWORKS, USER_SELECT_RANDOM, USER_SELECT_SEARCH, USER_SELECT_DEPT, GET_SEARCH_TERM } from './actionTypes';
 
 //a reducer always wants to return a new updated state value. using the switch statement allow us to determine the only possible ways state can change
 export function artReducer(state = {
   artworks: [],
-  userSelected: "random"
+  userSelected: "random",
+  search: ""
   },
    action) { //provide default version of state ex: state = {key: value}
   switch(action.type){
@@ -19,6 +20,9 @@ export function artReducer(state = {
     
     case USER_SELECT_DEPT:
       return {...state, userSelected: "dept"}
+
+    case GET_SEARCH_TERM:
+      return {...state, search: action.payload}
     
     default:
       return state;

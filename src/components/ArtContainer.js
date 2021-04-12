@@ -15,7 +15,8 @@ class ArtContainer extends React.Component{
                 return this.props.setArtworksWithinDispatchRandom()
 
             case "search":
-                return this.props.setArtworksWithinDispatchSearch()
+                let searchTerm = this.props.searchTermInStoresState
+                return this.props.setArtworksWithinDispatchSearch(searchTerm)
 
             case "dept":
                 let id = parseInt(this.props.match.params.department)
@@ -50,14 +51,15 @@ function mapStateToProps(state){
     //this object that we return will have its key: value pairs inside of props for the component at the end
     return {
         artworksInStoresState: state.artworks,
-        userSelectedInStoresState: state.userSelected
+        userSelectedInStoresState: state.userSelected, 
+        searchTermInStoresState: state.search
     }
 }
 
 function mapDispatchToProps(dispatch){
     return {
         setArtworksWithinDispatchRandom: () => dispatch(setArtworksByRandom()), 
-        setArtworksWithinDispatchSearch: () => dispatch(setArtworksBySearch()),
+        setArtworksWithinDispatchSearch: (searchTermInStoresState) => dispatch(setArtworksBySearch(searchTermInStoresState)),
         setArtworksWithinDispatchDept: (department_id) => dispatch(setArtworksByDept(department_id))
     }
 }

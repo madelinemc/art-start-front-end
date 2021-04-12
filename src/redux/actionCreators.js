@@ -1,4 +1,4 @@
-import { SET_ARTWORKS, USER_SELECT_RANDOM } from './actionTypes';
+import { SET_ARTWORKS, USER_SELECT_RANDOM, GET_SEARCH_TERM } from './actionTypes';
 
 const url = "http://localhost:3000/"
 
@@ -16,9 +16,9 @@ export function setArtworksByRandom(){
 }
 //thunk: setArtworks returns a fuction that receives dispatch as an argument
 
-export function setArtworksBySearch(){
+export function setArtworksBySearch(search){
     return function(dispatch){
-        fetch(url + "artworks")
+        fetch(url + "artists/" + search + "/artworks")
         .then(response => response.json())
         .then(responseObject => {
             let artworks = responseObject
@@ -38,6 +38,10 @@ export function setArtworksByDept(department_id){
             dispatch({type: SET_ARTWORKS, payload: artworks})
         })
     }
+}
+
+export function getSearchTerm(search){
+    return {type: GET_SEARCH_TERM, payload: search}
 }
 
 
