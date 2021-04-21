@@ -5,6 +5,7 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
 import { setArtworksByRandom, setArtworksBySearch, setArtworksByDept } from '../redux/actionCreators';
+import IncrementButton from './IncrementButton';
 
 
 class ArtContainer extends React.Component{
@@ -39,9 +40,13 @@ class ArtContainer extends React.Component{
 
     render(){
         return (
-            <div id="art-container">
-                {this.props.artworksInStoresState.map(this.renderArt)}
+            <div>
+                <div id="art-container">
+                    {this.props.artworksInStoresState.map(this.renderArt)}
+                </div>
+                <IncrementButton />
             </div>
+
         )
     }
 
